@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User home page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div sec:authorize="isAuthenticated()" style="background-color:lightgrey;color:black;padding:10px">
+<b style="color: black;font-size: x-large;">Welcome :  </b><span sec:authentication="name" style="font-style: italic;">
+    </span>
+
+</div>
+<br><br>
+<div th:each="u: ${user}">
+
+    <label for><b>User Name:</b></label>
+    <input type="text" name="username" readonly th:value="${u.username}"><br><br>
+    <label for><b>Password :</b></label>
+    <input type="text" name="password" readonly th:value="${u.password}"><br><br>
+    <label for><b>Role Type:</b></label>
+    <input type="text" name="roleid" readonly th:value="${u.roleid}"><br><br>
+    <label for><b>User ID:</b></label>
+    <input type="text" name="userid" readonly th:value="${u.userid}"><br><br>
+    <label for><b>Address:</b></label>
+    <input type="text" name="address" readonly th:value="${u.address}"><br><br>
+</div>
+<div style="margin-left:140px">
+    <br><br>
+    <form action="/modifyuserdetails">
+        <button type="submit" >Update</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<br><br>
+<h1 style="text-align:center"> Login</h1>
+ <form action="/login" method="post" >
+    <div style="margin-left:40px">
+        <br><br>
+        <label for><b>User Name</b></label>
+        <input type="text" name="username" required><br><br>
+
+        <label for><b>Password</b></label>
+        <input type="text" name="password" required>
+        <br><br>
+        <input class="button" style="width: fit-content;text-align:center" type="submit" value="Login">
+        <a th:href="@{/forgetpasswordhome}">Forgot Password?</a>
+    </div>
+ </form>
+
+</body>
+<script>
+
+</script>
+</html>
